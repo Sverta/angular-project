@@ -1,0 +1,26 @@
+{
+  "name": "package",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "dev": "lite-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sverta/angular-project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sverta/angular-project/issues"
+  },
+  "homepage": "https://github.com/Sverta/angular-project#readme",
+  "devDependencies": {
+    "connect-history-api-fallback": "^1.3.0",
+    "lite-server": "^2.2.2"
+  },
+  "dependencies": {
+    "angular-ui-router": "^0.3.2"
+  }
+}

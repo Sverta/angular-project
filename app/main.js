@@ -1,51 +1,31 @@
+(function(){
+    let app = angular.module('todoApp', ['ui.router']);
 
+    app.service('myDataService', ['$http', function ($http) {
+        this.getData = () => $http.get('http://irden-workshop.info/api/feedback').then(
+            success => success.data,
+            error => console.warn('error', error)
+        );
+    }]);
 
-angular.module('todoApp', [])
-    .controller('TodoListController', function($scope, $http) {
-
-        var responsePromise = $http.get("http://irden-workshop.info/api/notes")
-      //  responsePromise.success(function(responce, status, headers, config) {
-            .then(function(response) {
-                $scope.myData = response.data;
+    app.controller('TodoListController', function(myDataService) {
+        myDataService.getData().then(
+            (resp) => {
+                this.data = resp;
             });
-           // $scope.fromServer = responce.data;
-            //console.log(data);
-        // });
-        // responsePromise.error(function(data, status, headers, config) {
-        //     alert("AJAX failed!");
-        // // })
-        // var todoList = this;
-        // todoList.todos = [
-        //     {text:'learn angular', done:true},
-        //     {text:'build an angular app', done:false}];
-        //
-        // todoList.addTodo = function() {
-        //     todoList.todos.push({text:todoList.todoText, done:false});
-        //     todoList.todoText = '';
-        // };
-
-
     });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+})();
+// app.service('response',function () {
+//         this.data = function (x) {
+//             return x.title;
+//         }
+//     });
+//
+//     app.controller('TodoListController', function($scope, $http) {
+//         var responsePromise = $http.get("http://irden-workshop.info/api/feedback").then(function(response) {
+//                 $scope.myData = response.data;
+//             });
+//     });
 
 // todoList.remaining = function() {
 //     var count = 0;
