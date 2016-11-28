@@ -8,12 +8,7 @@
         );
     }]);
 
-    app.controller('TodoListController', function(myDataService) {
-        myDataService.getData().then(
-            (resp) => {
-                this.data = resp;
-            });
-    });
+  //  app.controller('сomponentController', ComponentController);
 })();
 // app.service('response',function () {
 //         this.data = function (x) {

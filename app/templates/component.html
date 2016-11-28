@@ -1,0 +1,31 @@
+<main class="container-fluid">
+    <div class="note-card-first">
+        <div class="note-card">
+            <p>Оставить отзыв</p>
+        </div>
+        <div class="note-card">
+            <p>Мой отзыв</p>
+            <form ng-submit="todoAdd()">
+                Я,<input  placeholder="мое имя?" name="newNoteTitle" class=" title_name" type="text" ng-model="todoInput" >
+                , решил оставить отзыв
+                <textarea  placeholder="мое мнение" name="newNoteValue" class="" type="text" ng-model="todoInputValue" ></textarea>
+            </form>
+            <div class="actions col-xs-12 row">
+                <button type="submit" class="btn btn-warning button-close">Отменить</button>
+                <button type="submit" class=" btn btn-success button-save">Сохранить</button>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div ng-repeat="todo in $ctrl.data" class="col-xs-12 note-card-inner">
+            <div class="note-card-first">
+                <div class="note-card">
+                    <div class="note-card">
+                        <div class="node-card-title">Отзыв:<span ng-bind="todo.name"></span></div>
+                        <div class=""><span ng-bind="todo.description"></span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

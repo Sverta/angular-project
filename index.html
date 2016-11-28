@@ -5,13 +5,14 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <script src="node_modules/angular/angular.js"></script>
     <script src="node_modules/angular-ui-router/release/angular-ui-router.js"></script>
-    <script src="app/main.js"></script>
+    <script src="app/js/main.js"></script>
+    <script src="app/js/component.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="main.css">
 </head>
-<body ng-controller="TodoListController as $ctrl">
+<body >
 <header>
     <nav class="navbar header">
         <div class="container-fluid">
@@ -29,37 +30,6 @@
         </div>
     </nav>
 </header>
-<main class="container-fluid">
-    <div class="note-card-first">
-        <div class="note-card">
-            <p>Оставить отзыв</p>
-        </div>
-        <div class="note-card">
-            <p>Мой отзыв</p>
-            <form ng-submit="todoAdd()">
-                 Я,<input  placeholder="мое имя?" name="newNoteTitle" class=" title_name" type="text" ng-model="todoInput" >
-                 , решил оставить отзыв
-                <textarea  placeholder="мое мнение" name="newNoteValue" class="" type="text" ng-model="todoInputValue" ></textarea>
-            </form>
-            <div class="actions col-xs-12 row">
-                <button type="submit" class="btn btn-warning button-close">Отменить</button>
-                <button type="submit" class=" btn btn-success button-save">Сохранить</button>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div ng-repeat="todo in $ctrl.data" class="col-xs-12 note-card-inner">
-            <div class="note-card-first">
-                <div class="note-card">
-                    <div class="note-card">
-                        <div class="node-card-title">Отзыв:<span ng-bind="todo.name"></span></div>
-                        <div class=""><span ng-bind="todo.description"></span></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</main>
-<ng-view></ng-view>
+<component></component>
 </body>
 </html>
